@@ -34,6 +34,16 @@ const Header = () => {
                 <div>
                   <Link to="/login">
                     <Button onClick={handleLogOut} variant="outline-secondary">
+                      My Reviews
+                    </Button>
+                  </Link>
+                  <Link to="/login">
+                    <Button onClick={handleLogOut} variant="outline-secondary">
+                      Add Reviews
+                    </Button>
+                  </Link>
+                  <Link to="/login">
+                    <Button onClick={handleLogOut} variant="outline-secondary">
                       Log Out
                     </Button>
                   </Link>
@@ -46,6 +56,7 @@ const Header = () => {
                 </div>
               )}
             </Nav.Link>
+            ;
           </Nav>
         </Navbar.Collapse>
       </Container>
