@@ -1,11 +1,14 @@
 import React from "react";
+// import {
+//   FaGoogle,
+//   FaFacebookSquare,
+//   FaTwitter,
+//   FaWhatsapp,
+//   FaTwitch,
+// } from "react-icons/fa";
 
 const Footer = () => {
-  return (
-    <div>
-      <h2>I am footer</h2>
-    </div>
-  );
+  return <h2>hello</h2>;
 };
 
 export default Footer;
