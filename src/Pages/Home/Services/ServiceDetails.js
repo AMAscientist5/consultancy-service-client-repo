@@ -16,12 +16,14 @@ const ServiceDetails = () => {
       <div className="w-50 mx-auto">
         <ServiceDetail service={service}></ServiceDetail>
         <ReviewSection service={service}></ReviewSection>
-        {user?.email}
+
         {user?.email ? (
           <AddReview service={service}></AddReview>
         ) : (
           <Link to="/login">
-            <button>Please login to add your review</button>
+            <h3>
+              <button className="mb-5">Please login to add your review</button>
+            </h3>
           </Link>
         )}
       </div>

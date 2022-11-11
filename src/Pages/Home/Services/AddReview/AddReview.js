@@ -43,8 +43,7 @@ const AddReview = ({ service }) => {
   return (
     <div>
       <form onSubmit={handleAddReview}>
-        <h2 className="text-4xl">{service.ServiceName}</h2>
-        <h4 className="text-3xl">Price: {price}</h4>
+        <h2 className="text-4xl mb-4">{service.ServiceName}</h2>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           <input
             name="fullName"
@@ -68,7 +67,7 @@ const AddReview = ({ service }) => {
           placeholder="Your Review"
           required
         ></textarea>
-        <input className="btn border" type="submit" value="Add Review" />
+        <input className="btn border mb-3" type="submit" value="Add Review" />
       </form>
     </div>
   );

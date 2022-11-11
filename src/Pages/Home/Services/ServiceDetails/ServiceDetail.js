@@ -2,23 +2,22 @@ import React from "react";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
 import { Link } from "react-router-dom";
-import myimg from "../../../../Assets/mine.jpg";
 
 const ServiceDetail = ({ service }) => {
-  const { ServiceName, details, price, rating, _id } = service;
+  const { ServiceName, details, price, rating, _id, image_url } = service;
   return (
     <PhotoProvider>
       <div className="text-start border">
         <h2>{ServiceName}</h2>
 
-        <PhotoView src={myimg}>
-          <img src={myimg} alt="" />
+        <PhotoView src={image_url}>
+          <img className="w-100" src={image_url} alt="" />
         </PhotoView>
 
-        <p>{details}</p>
+        <p className="p-3">{details}</p>
         <p>
-          {price}
-          {rating}
+          <span className="pr-3">Service Charge: {price} </span>
+          <span>Rating: {rating}</span>
         </p>
         <Link to={`/serviceDetails/${_id}`}>
           <button className="btn btn-warning">View Details</button>

@@ -3,7 +3,7 @@ import React from "react";
 const ServiceCountries = () => {
   return (
     <div>
-      <h2>I am Service Country</h2>
+      <h2>This page is developing</h2>
     </div>
   );
 };

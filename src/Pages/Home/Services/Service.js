@@ -19,10 +19,10 @@ const Service = ({ service }) => {
           <img src={image_url} alt="" />
         </PhotoView>
 
-        <p>{details.slice(0, 100)}</p>
+        <p className="p-3">{details.slice(0, 100)}</p>
         <p>
-          {price}
-          {rating}
+          <span className="pr-3">Service Charge: {price} </span>
+          <span>Rating: {rating}</span>
         </p>
         <Link to={`/serviceDetails/${_id}`}>
           <button className="btn btn-warning">View Details</button>
