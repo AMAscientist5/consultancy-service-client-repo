@@ -3,9 +3,11 @@ import React from "react";
 const Blog = () => {
   return (
     <div className="text-start w-75 mx-auto">
-      <div className="my-5">
+      <div className="my-5 font-thin">
         <div className="text-center">
-          <h2>Difference between SQL and NoSQL ?</h2>
+          <h2 className="merun text-danger">
+            Difference between SQL and NoSQL ?
+          </h2>
         </div>
         <p>
           <strong>SQL vs NoSQL: 6 Main Differences </strong> <br />
@@ -40,9 +42,10 @@ const Blog = () => {
           better for unstructured data like documents or JSON.
         </p>
       </div>
-      <div className="my-5">
+      <hr className="border-5 font-extrabold text-danger" />
+      <div className="my-5 font-thin">
         <div className="text-center">
-          <h2> What is JWT, and how does it work?</h2>
+          <h2 className=" text-danger"> What is JWT, and how does it work?</h2>
         </div>
 
         <p>
@@ -90,9 +93,12 @@ const Blog = () => {
           header and payload match the signature
         </p>
       </div>
-      <div className="my-5">
+      <hr className="border-5 font-extrabold text-danger" />
+      <div className="mt-5 font-thin">
         <div className="text-center">
-          <h2>What is the difference between javascript and NodeJS?</h2>
+          <h2 className="text-danger mb-5">
+            What is the difference between javascript and NodeJS?
+          </h2>
         </div>
         <div className=" mx-auto">
           <p>
@@ -141,10 +147,12 @@ const Blog = () => {
           </p>
         </div>
       </div>
-
-      <div>
+      <hr className="border-5 font-extrabold text-danger" />
+      <div className="my-5 font-thin">
         <div>
-          <h2>How does NodeJS handle multiple requests at the same time?</h2>
+          <h2 className="text-danger mb-5">
+            How does NodeJS handle multiple requests at the same time?
+          </h2>
         </div>
         <p className="text-center">
           NodeJS receives multiple client requests and places them into
@@ -175,6 +183,7 @@ const Blog = () => {
           response back to the client.
         </p>
       </div>
+      <hr className="border-5 font-extrabold text-danger" />
     </div>
   );
 };

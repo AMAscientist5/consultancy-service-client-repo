@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-// { order, handleDelete, handleStatusUpdate }
+import { FaRegTrashAlt } from "react-icons/fa";
 const Review = ({ review, handleDelete }) => {
-  // const { _id, serviceName, phone, customer, price, service, status } = order;
   const { _id, serviceName, customer, price, service, reviewText } = review;
   const [reviewOrder, setReviewOrder] = useState({});
 
@@ -16,13 +15,15 @@ const Review = ({ review, handleDelete }) => {
     <tr>
       <th>
         <label>
-          <button onClick={() => handleDelete(_id)}>X</button>
+          <button onClick={() => handleDelete(_id)}>
+            <FaRegTrashAlt></FaRegTrashAlt>
+          </button>
         </label>
       </th>
       <td>
-        <div className="flex items-center space-x-3">
+        <div className="flex items-center">
           <div className="avatar">
-            <div className="mask mask-squircle w-12 h-12">
+            <div className="mask mask-squircle  h-12">
               {reviewOrder?.image_url && (
                 <img
                   src={reviewOrder.image_url}
@@ -33,19 +34,19 @@ const Review = ({ review, handleDelete }) => {
           </div>
           <div>
             <div className="font-bold">{customer}</div>
-            <div className="text-sm opacity-50">United States</div>
+            <div className="text-sm opacity-50">{serviceName}</div>
           </div>
         </div>
       </td>
       <td>
-        {serviceName}
-        <br />
-        <span className="badge badge-ghost badge-sm">{price}</span>
+        <div>{price}</div>
       </td>
       <td>{reviewText}</td>
       <th>
         <Link to={`/update/${_id}`}>
-          <button className="btn btn-ghost bg-warning btn-xs">Update</button>
+          <button className="btn btn-ghost text-primary font-bold btn-xs">
+            Update
+          </button>
         </Link>
       </th>
     </tr>

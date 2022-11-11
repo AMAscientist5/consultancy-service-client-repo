@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 
 const UpdateReviews = () => {
+  const navigate = useNavigate();
   const service = useLoaderData();
   const { user } = useContext(AuthContext);
 
@@ -35,18 +36,18 @@ const UpdateReviews = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount > 0) {
-          alert("User is Updated");
+          alert("Review is Updated");
           console.log(data);
+          navigate("/myReview");
         }
       });
   };
 
   return (
-    <div className="w-50 mx-auto">
+    <div className="w-50 mx-auto my-5">
       <h2>Please Update: {service.customer}</h2>
       <form onSubmit={handleUpdateReview}>
         <h2 className="text-4xl">{service.ServiceName}</h2>
-        <h4 className="text-3xl">Price: {service.price}</h4>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           <input
             defaultValue={service.customer}

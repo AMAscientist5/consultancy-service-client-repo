@@ -1,6 +1,7 @@
 import Main from "../../Layout/Main";
 import ErrorRoute from "../../Pages/404/ErrorRoute";
 import AddService from "../../Pages/AddService/AddService";
+import AddServiceSecond from "../../Pages/AddService/AddServiceSecond";
 import Blog from "../../Pages/Blog/Blog";
 import Home from "../../Pages/Home/Home/Home";
 import ServiceDetails from "../../Pages/Home/Services/ServiceDetails";
@@ -43,10 +44,20 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/addService",
+        path: "/addService/:id",
         element: (
           <PrivateRoute>
             <AddService></AddService>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/services/${params.id}`),
+      },
+      {
+        path: "/addService",
+        element: (
+          <PrivateRoute>
+            <AddServiceSecond></AddServiceSecond>
           </PrivateRoute>
         ),
       },

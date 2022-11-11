@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 import Review from "./Review";
-// import Review from "./Review";
 
 const MyReviews = () => {
   const { user } = useContext(AuthContext);
@@ -14,9 +13,7 @@ const MyReviews = () => {
   }, [user?.email]);
 
   const handleDelete = (id) => {
-    const proceed = window.confirm(
-      "Are you sure, you want to cancel this order"
-    );
+    const proceed = window.confirm("Are you sure, want to delete");
     if (proceed) {
       fetch(`http://localhost:5000/reviews/${id}`, {
         method: "DELETE",
@@ -34,7 +31,7 @@ const MyReviews = () => {
   };
 
   return (
-    <div>
+    <div className="my-5 px-5">
       {reviews.length ? (
         <div className="overflow-x-auto w-full">
           <table className="table w-full">
@@ -42,12 +39,13 @@ const MyReviews = () => {
               <tr>
                 <th>
                   <label>
-                    <button>X</button>
+                    <button>Delete</button>
                   </label>
                 </th>
-                <th>Name</th>
-                <th>Job</th>
-                <th>Favorite Color</th>
+                <th>Service</th>
+                <th>Price</th>
+                <th>Review</th>
+                <th>Status</th>
                 <th></th>
               </tr>
             </thead>
@@ -57,7 +55,6 @@ const MyReviews = () => {
                   key={review._id}
                   review={review}
                   handleDelete={handleDelete}
-                  // handleReviewUpdate={handleReviewUpdate}
                 ></Review>
               ))}
             </tbody>
@@ -69,8 +66,5 @@ const MyReviews = () => {
     </div>
   );
 };
-
-// handleDelete={handleDelete}
-// handleStatusUpdate={handleStatusUpdate}
 
 export default MyReviews;

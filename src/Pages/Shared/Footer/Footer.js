@@ -16,8 +16,6 @@ const Footer = () => {
   return (
     <footer>
       <div className="bg-black d-lg-flex p-5">
-        {/* <h2 className="text-white">Aradun</h2> */}
-
         <div className="">
           <p className=" mx-auto text-white font-semibold">
             Our goal is to provide a personal <br />
