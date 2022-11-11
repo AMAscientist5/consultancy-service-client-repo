@@ -25,13 +25,16 @@ const AddService = () => {
     };
     console.log(review);
 
-    fetch("http://localhost:5000/addService", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(review),
-    })
+    fetch(
+      "https://aradun-visa-consultancy-service-server.vercel.app/addService",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(review),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.acknowledged) {

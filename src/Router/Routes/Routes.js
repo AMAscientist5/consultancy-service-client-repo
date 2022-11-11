@@ -51,7 +51,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/services/${params.id}`),
+          fetch(
+            `https://aradun-visa-consultancy-service-server.vercel.app/services/${params.id}`
+          ),
       },
       {
         path: "/addService",
@@ -65,7 +67,9 @@ const router = createBrowserRouter([
         path: "/update/:id",
         element: <UpdateReviews></UpdateReviews>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/reviews/${params.id}`),
+          fetch(
+            `https://aradun-visa-consultancy-service-server.vercel.app/reviews/${params.id}`
+          ),
       },
       {
         path: "/services",
@@ -75,7 +79,9 @@ const router = createBrowserRouter([
         path: "/serviceDetails/:id",
         element: <ServiceDetails></ServiceDetails>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/services/${params.id}`),
+          fetch(
+            `https://aradun-visa-consultancy-service-server.vercel.app/services/${params.id}`
+          ),
       },
       {
         path: "/*",

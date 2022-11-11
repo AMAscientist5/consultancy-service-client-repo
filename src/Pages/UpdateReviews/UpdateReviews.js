@@ -26,13 +26,16 @@ const UpdateReviews = () => {
       reviewText,
     };
 
-    fetch(`http://localhost:5000/reviews/${_id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(review),
-    })
+    fetch(
+      `https://aradun-visa-consultancy-service-server.vercel.app/reviews/${_id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(review),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount > 0) {

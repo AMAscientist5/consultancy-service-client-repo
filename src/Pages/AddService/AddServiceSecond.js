@@ -8,13 +8,15 @@ const AddServiceSecond = () => {
   const [allServices, setAllServices] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/addService?email=${user?.email}`)
+    fetch(
+      `https://aradun-visa-consultancy-service-server.vercel.app/addService?email=${user?.email}`
+    )
       .then((res) => res.json())
       .then((data) => setAddedService(data));
   }, [user?.email]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/services")
+    fetch("https://aradun-visa-consultancy-service-server.vercel.app/services")
       .then((res) => res.json())
       .then((data) => {
         setAllServices(data);

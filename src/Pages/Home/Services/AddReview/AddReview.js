@@ -22,7 +22,7 @@ const AddReview = ({ service }) => {
     };
     console.log(review);
 
-    fetch("http://localhost:5000/reviews", {
+    fetch("https://aradun-visa-consultancy-service-server.vercel.app/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",

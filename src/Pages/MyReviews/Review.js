@@ -6,7 +6,9 @@ const Review = ({ review, handleDelete }) => {
   const [reviewOrder, setReviewOrder] = useState({});
 
   useEffect(() => {
-    fetch(`http://localhost:5000/services/${service}`)
+    fetch(
+      `https://aradun-visa-consultancy-service-server.vercel.app/services/${service}`
+    )
       .then((res) => res.json())
       .then((data) => setReviewOrder(data));
   }, [service]);

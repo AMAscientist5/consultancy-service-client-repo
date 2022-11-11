@@ -7,7 +7,9 @@ const HomePageServices = () => {
   const [limitServices, setLimitServices] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/limit-services")
+    fetch(
+      "https://aradun-visa-consultancy-service-server.vercel.app/limit-services"
+    )
       .then((res) => res.json())
       .then((data) => {
         setLimitServices(data);
