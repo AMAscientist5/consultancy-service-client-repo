@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useContext } from "react";
-import Banner from "../Banner/Banner";
+
 import HomePageServices from "../Services/HomePageServices";
 import ContactUs from "../ContactUs/ContactUs";
 import AboutUs from "../AboutUs/AboutUs";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
+import Banner from "../Banner/Banner";
 
 const Home = () => {
   const { user } = useContext(AuthContext);

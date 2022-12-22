@@ -11,7 +11,7 @@ const Service = ({ service }) => {
         <h2>{ServiceName}</h2>
 
         <PhotoView src={image_url}>
-          <img src={image_url} alt="" />
+          <img className="h-60" src={image_url} alt="" />
         </PhotoView>
 
         <p className="p-3">{details.slice(0, 100)}</p>

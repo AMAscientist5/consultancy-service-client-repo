@@ -25,10 +25,10 @@ const AddServiceSecond = () => {
 
   return (
     <div>
-      <p>Service lists to add in cart</p>
-      <div className="d-flex mx-5">
+      <p className="text-2xl font-bold my-3">Service lists to add in cart</p>
+      <div className="d-lg-flex mx-5 ">
         {allServices.map((service) => (
-          <p className="bg-light mb-1 mx-3">
+          <p className="bg-light py-2 px-1 mb-1 mx-3">
             <Link to={`/addService/${service._id}`}>
               <button>{service.ServiceName}</button>
             </Link>

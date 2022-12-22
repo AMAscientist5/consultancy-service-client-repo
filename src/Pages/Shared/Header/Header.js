@@ -7,6 +7,7 @@ import Image from "react-bootstrap/Image";
 import React, { useContext } from "react";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 import logo from "../../../Assets/logo.png";
+import "./Header.css";
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
 
@@ -28,28 +29,46 @@ const Header = () => {
             ></Image>
           </Link>
         </Navbar.Brand>
+
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Link to="/" className="text-decoration-none text-light mx-5">
-              Home
+              <Button variant="outline-secondary nav-menu-width">Home</Button>
             </Link>
             <Link to="/blog" className="text-decoration-none text-light">
-              Blog
+              <Button className="nav-menu-width" variant="outline-secondary">
+                Blog
+              </Button>
             </Link>
           </Nav>
 
-          <Nav>
+          <Nav className="align-items-center">
             {user?.uid ? (
-              <div>
-                <Link to="/myReview">
-                  <Button variant="outline-secondary">My Reviews</Button>
+              <div className="nav-menu">
+                <Link className="text-style-none" to="/myReview">
+                  <Button
+                    className="d-block d-lg-inline nav-menu-width"
+                    variant="outline-secondary"
+                  >
+                    My Reviews
+                  </Button>
                 </Link>
-                <Link to="/addService">
-                  <Button variant="outline-secondary">Add Service</Button>
+                <Link className="text-style-none" to="/addService">
+                  <Button
+                    className="d-block d-lg-inline text-style-none"
+                    variant="outline-secondary"
+                  >
+                    Add Service
+                  </Button>
                 </Link>
-                <Link to="/login">
-                  <Button onClick={handleLogOut} variant="outline-secondary">
+                <Link className="text-style-none" to="/login">
+                  <Button
+                    className="d-block d-lg-inline nav-menu-width"
+                    onClick={handleLogOut}
+                    variant="outline-secondary"
+                  >
                     Log Out
                   </Button>
                 </Link>
@@ -57,7 +76,12 @@ const Header = () => {
             ) : (
               <div>
                 <Link to="/login">
-                  <Button variant="outline-secondary">Log In</Button>
+                  <Button
+                    className="nav-menu-width"
+                    variant="outline-secondary"
+                  >
+                    Log In
+                  </Button>
                 </Link>
               </div>
             )}

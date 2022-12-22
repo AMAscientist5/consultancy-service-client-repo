@@ -21,9 +21,9 @@ const SignUp = () => {
   };
 
   return (
-    <div className="sm:w-3/4 md:w-2/4 lg:w-1/4 mx-auto w-full max-w-md p-4 rounded-md shadow sm:p-8 dark:bg-gray-900 dark:text-gray-100">
-      <div className="mb-2 text-center">
-        <h1 className="my-3 text-4xl font-bold">Sign Up</h1>
+    <div className="lg:m-6 sm:w-3/4 md:w-2/4 lg:w-1/4 mx-auto w-full max-w-md p-3 rounded-md shadow sm:p-8 dark:bg-gray-900 dark:text-gray-100">
+      <div className="text-center">
+        <h1 className="my-1 text-4xl font-bold">Sign Up</h1>
         <p className="text-sm dark:text-gray-400">Create A new Account</p>
       </div>
       <form
@@ -88,7 +88,7 @@ const SignUp = () => {
         </div>
         <button
           type="submit"
-          className="mt-3 w-full px-8 py-1 font-bold rounded-md bg-cyan-600  text-black"
+          className="text-2xl mt-3 w-full px-8 py-2 font-bold rounded-md bg-cyan-600  text-black"
         >
           Sign Up
         </button>
